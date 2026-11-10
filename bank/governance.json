@@ -25,7 +25,7 @@
     "作成者と編集者がそれぞれ別のラベルを適用でき、両方が有効になる"
    ],
    "answer": 0,
-   "explanation": "秘密度ラベルは、1つのアイテムに1つだけ適用できる。親ラベルの下にサブラベルを置く2階層の構成にしても、アイテムに付くのは選択したサブラベル1つである。サブラベルは親ラベルの設定を継承せず（色を除く）、複数のラベルを重ねたり、人ごとに別のラベルを持たせたりはできない。親ラベルは、ラベルグループに置き換えられつつあるため、最新の構成は公式ドキュメントで確認する。",
+   "explanation": "秘密度ラベルは、1つのアイテムに1つだけ適用できる。親ラベルの下にサブラベルを置く2階層の構成にしても、アイテムに付くのは選択したサブラベル1つである。2階層目のラベルは、色を除いて1階層目の設定を継承しない。複数のラベルを重ねたり、人ごとに別のラベルを持たせたりはできない。2階層の構成は、親ラベルに代わってラベルグループを使う形に置き換えられつつある（ラベルグループ自体は公開できず、中のラベルだけを公開する）。最新の構成は公式ドキュメントで確認する。",
    "topic": "秘密度ラベル",
    "volatile": true,
    "createdAt": "2026-11-10"
@@ -151,7 +151,7 @@
     "Data Security Posture Management（DSPM）for AI"
    ],
    "answer": 3,
-   "explanation": "DSPM for AI は、Copilot やエージェント、その他の AI アプリの利用とデータのリスクを可視化し、推奨事項やワンクリックのポリシーを提供する。Compliance Manager は規制への準拠の評価、Defender XDR は脅威の検出と対応、eDiscovery（Premium）は法務のための検索・保全・レビューが目的である。DSPM for AI は、従来の版から新しい DSPM に置き換えが進んでいるため、画面や名称は変わることがある。",
+   "explanation": "DSPM for AI は、Copilot やエージェント、その他の AI アプリの利用とデータのリスクを可視化し、推奨事項やワンクリックのポリシーを提供する。Compliance Manager は規制への準拠の評価、Defender XDR は脅威の検出と対応、eDiscovery（Premium）は法務のための検索・保全・レビューが目的である。従来の版（classic）は、AI アプリやエージェントに対応した新しい Data Security Posture Management に置き換えられ、改善は classic には追加されない。そのため、画面や名称は変わることがある。",
    "topic": "DSPM for AI",
    "volatile": true,
    "createdAt": "2026-11-10"
@@ -235,7 +235,7 @@
     "Communication Compliance のポリシー"
    ],
    "answer": 2,
-   "explanation": "DLP は、秘密度ラベルが付いたコンテンツを Copilot やエージェントが要約するのを防ぐ制御に使える。Compliance Manager は準拠の評価、監査ログは操作の記録の確認、Communication Compliance は不適切なメッセージの検出が目的で、Copilot の処理を直接制限する機能ではない。Copilot を対象にした DLP の提供状況や対象範囲は変わることがあるため、最新の情報は公式ドキュメントで確認する。",
+   "explanation": "Microsoft Purview DLP には、Microsoft 365 Copilot と Copilot Chat を対象にした場所があり、秘密度ラベルが付いたファイルやメールを Copilot に処理させない（要約や回答に使わせない）ポリシーを作れる。対象は、ファイルと、2025 年 1 月 1 日以降に送信されたメールで、予定表の招待は対象外。ポリシーの変更が反映されるまで最大 4 時間かかる。Compliance Manager は準拠の評価、監査ログは操作の記録の確認、Communication Compliance は不適切なメッセージの検出が目的で、Copilot の処理を直接制限する機能ではない。提供状況や対象範囲は変わることがあるため、最新の情報は公式ドキュメントで確認する。",
    "topic": "Copilotを守る権限とコントロール",
    "volatile": true,
    "createdAt": "2026-11-10"
@@ -487,7 +487,7 @@
     "SharePoint のドキュメントの本文だけが対象で、メッセージは対象外である"
    ],
    "answer": 0,
-   "explanation": "Communication Compliance は、Teams のチャネルとチャット、Exchange Online、Viva Engage、Microsoft 365 Copilot と Copilot Chat のプロンプトと応答などを対象にできる。メールだけ、チャネルだけ、ドキュメントの本文だけに限られるわけではない。対象となるチャネルは拡大していくため、最新の情報は公式ドキュメントで確認する。",
+   "explanation": "Communication Compliance では、Exchange、Teams、Viva Engage に加えて、生成 AI のチャネル（Microsoft Copilot experiences、Enterprise AI apps、Other AI apps）や、コネクタで設定したサードパーティのソースも対象にできる。メールだけ、チャネルだけ、ドキュメントの本文だけに限られるわけではない。Microsoft 365 以外の AI のデータを検出するには従量課金が必要だが、Microsoft 365 Copilot のデータには従量課金の要件や料金はない。対象となるチャネルは拡大していくため、最新の情報は公式ドキュメントで確認する。",
    "topic": "Communication Compliance",
    "volatile": true,
    "createdAt": "2026-11-10"
@@ -501,7 +501,7 @@
     "監査（Auditing）"
    ],
    "answer": 3,
-   "explanation": "DSPM for AI で Copilot やエージェントのアクティビティを捕捉するには、監査をオンにする必要がある。Activity explorer では、AI とのやり取りや機密情報の種類などのイベントを確認できる。インシデントの自動修復、ゲストアクセスの許可、外部共有の無効化は、アクティビティを捕捉する前提条件ではない。名称や機能は変わることがあるため、最新の情報は公式ドキュメントで確認する。",
+   "explanation": "DSPM for AI で Copilot やエージェントのアクティビティを捕捉するには、Microsoft Purview の監査をオンにする。新しいテナントでは監査は既定でオンのため、すでに満たしている場合もある。Activity explorer では、AI とのやり取りや機密情報の種類などのイベントを確認できる。インシデントの自動修復、ゲストアクセスの許可、外部共有の無効化は、アクティビティを捕捉する前提条件ではない。名称や機能は変わることがあるため、最新の情報は公式ドキュメントで確認する。",
    "topic": "DSPM for AI",
    "volatile": true,
    "createdAt": "2026-11-10"
@@ -655,7 +655,7 @@
     "検索結果の、エクスポート"
    ],
    "answer": 0,
-   "explanation": "eDiscovery（Premium）では、レビューセットに収集した項目を、検索・絞り込み・タグ付け・分析でき、OCR や会話のスレッド化なども使える。キーワードクエリによる検索、ホールドの設定、結果のエクスポートは、eDiscovery（Standard）にもある。2つの版の機能の違いは変わることがあるため、最新の情報は公式ドキュメントで確認する。",
+   "explanation": "premium の eDiscovery では、レビューセットに収集した項目を、検索・絞り込み・タグ付け・分析でき、OCR や会話のスレッド化なども使える。キーワードクエリによる検索、ホールドの設定、結果のエクスポートは、premium でない eDiscovery にもある。premium の機能には E5 のサブスクリプション（または関連する E5 アドオン）が必要。現在のドキュメントでは、Content Search の機能は eDiscovery に含まれ、検索の結果の統計（Statistics）は従来の「コレクション」に代わるものになっている。機能の違いは変わることがあるため、最新の情報は公式ドキュメントで確認する。",
    "topic": "eDiscoveryのコンテンツ検索",
    "volatile": true,
    "createdAt": "2026-11-10"
